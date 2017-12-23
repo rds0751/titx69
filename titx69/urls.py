@@ -17,7 +17,6 @@ from oscar.app import application
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.i18n import javascript_catalog
-from oscar.app import shop
 from stores.app import application as stores_app
 from stores.dashboard.app import application as dashboard_app
 
@@ -35,6 +34,6 @@ urlpatterns = [
     url(r'^stores/', stores_app.urls),
 
     # adds internationalization URLs
-    (r'^jsi18n/$', javascript_catalog, name="javascript-catalogue"),
+    (r'^jsi18n/$', javascript_catalog),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
